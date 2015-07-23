@@ -1,0 +1,8 @@
+-define(STATUS_NOT_PLAYING, 0).
+
+-define(STATUS_FA_PAI, 1).
+-define(STATUS_PROMPT_USER_JIAO_DI_ZHU, 2).
+-define(STATUS_JIAO_DI_ZHU, 3).
+-define(STATUS_JIAO_DI_ZHU_FINISH, 4).
+-define(STATUS_FA_DI_PAI, 5).
+-define(STATUS_CHU_PAI, 6).

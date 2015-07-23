@@ -1,0 +1,12 @@
+{application, ruby_node_doudizhu,
+    [
+        {description, ""},
+        {vsn, "1"},
+        {registered, []},
+        {applications, [
+            kernel,
+            stdlib
+        ]},
+        {mod, {ruby_node_doudizhu_app, []}},
+        {env, []}
+    ]}.

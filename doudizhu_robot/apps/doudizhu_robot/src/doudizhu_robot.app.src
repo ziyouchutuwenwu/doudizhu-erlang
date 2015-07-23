@@ -1,0 +1,12 @@
+{application, doudizhu_robot,
+    [
+        {description, ""},
+        {vsn, "1"},
+        {registered, []},
+        {applications, [
+            kernel,
+            stdlib
+        ]},
+        {mod, {doudizhu_robot_app, []}},
+        {env, []}
+    ]}.

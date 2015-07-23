@@ -1,0 +1,2 @@
+-define(GUEST_USER_TYPE, "guestUser").
+-define(REGISTER_USER_TYPE, "registeredUser").
