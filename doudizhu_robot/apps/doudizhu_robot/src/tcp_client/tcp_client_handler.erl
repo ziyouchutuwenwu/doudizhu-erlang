@@ -54,6 +54,8 @@ handle_info(timeout, #socket_info_record{ip = Ip, port = Port} = State) ->
     Options = tcp_client_options:get_tcp_options(),
     case gen_tcp:connect(Ip, Port, Options, tcp_client_options:get_tcp_conn_timeout()) of
         {ok, Socket} ->
+            inet:setopts(Socket, [{active, tcp_client_options:get_active_count()}]),
+
             RecvTimeoutCount = 0,
             RecvTimerRef = erlang:send_after(tcp_client_options:get_tcp_recv_timeout(), self(), recv_time_out),
 

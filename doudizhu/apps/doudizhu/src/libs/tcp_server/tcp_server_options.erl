@@ -5,7 +5,7 @@
 
 get_tcp_options() ->
     [
-        {active, get_active_count()},
+        {active, false},
 
         binary,
         {packet, 4},
