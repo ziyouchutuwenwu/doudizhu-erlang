@@ -52,9 +52,10 @@ handle_info({tcp_error, _Socket, Reason}, State) ->
 
 %% init结束的消息
 handle_info(timeout, #socket_info_record{server_socket = LSock} = State) ->
-    inet:setopts(LSock, [{active, tcp_server_options:get_active_count()}]),
     case gen_tcp:accept(LSock, tcp_server_options:get_tcp_conn_timeout()) of
         {ok, ClientSocket} ->
+            inet:setopts(ClientSocket, [{active, tcp_server_options:get_active_count()}]),
+            
             RecvTimeoutCount = 0,
             RecvTimerRef = erlang:send_after(tcp_server_options:get_tcp_recv_timeout(), self(), recv_time_out),
 
